@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Drum Kit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    
+        h1 {
+            font-family: "Alfa Slab One", serif;
+            font-weight: 900;
+            font-style: normal;
+            text-align: center;
+            }
+
+        #w{
+            background-image: url('./images/tom1.png');
+        }
+        #a{
+            background-image: url('./images/tom2.png');
+        }
+        #s{
+            background-image: url('./images/tom3.png');
+        }
+        #d{
+            background-image: url('./images/tom4.png');
+        }
+        #j{
+            background-image: url('./images/snare.png');
+        }
+        #k{
+            background-image: url('./images/crash.png');
+        }
+        #l{
+            background-image: url('./images/kick.png');
+        }
+        
+        
+    
+  </style>
+</head>
+<body class="bg-sky-950">
+  <h1 class="text-white text-5xl mt-10 text-center">DRUM🥁KIT</h1>
+
+  <div class="container flex flex-wrap justify-center items-center space-y-4 space-x-4 mt-15 mb-10 ml-10 mr-10">
+    <div id="w" class="flex justify-center items-center drum w-45 h-40 border-15 border-sky-900 rounded-2xl p-5 text-black-700 text-5xl font-bold">W</div>
+    <div id="a" class="flex justify-center items-center drum w-45 h-40 border-15 border-sky-900 rounded-2xl p-5 text-black-700 text-5xl font-bold">A</div>
+    <div id="s" class="flex justify-center items-center drum w-45 h-40 border-15 border-sky-900 rounded-2xl p-5 text-black-700 text-5xl font-bold">S</div>
+    <div id="d" class="flex justify-center items-center drum w-45 h-40 border-15 border-sky-900 rounded-2xl p-5 text-black-700 text-5xl font-bold">D</div>
+    <div id="j" class="flex justify-center items-center drum w-45 h-40 border-15 border-sky-900 rounded-2xl p-5 text-black-700 text-5xl font-bold">J</div>
+    <div id="k" class="flex justify-center items-center drum w-45 h-40 border-15 border-sky-900 rounded-2xl p-5 text-black-700 text-5xl font-bold">K</div>
+    <div id="l" class="flex justify-center items-center drum w-45 h-40 border-15 border-sky-900 rounded-2xl p-5 text-white text-5xl font-bold">L</div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>

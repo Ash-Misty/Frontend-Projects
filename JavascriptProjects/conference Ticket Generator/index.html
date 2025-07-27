@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frontend Mentor | Conference ticket generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png"/>
+ <link rel="stylesheet" href="./styles.css">
+  
+</head>
+<body>
+  <div class="container">
+    <center>
+      <span class="logo">
+        <img src="./assets/images/logo-full.svg" />
+      </span>
+      <h1>Your Journey to Coding Conf <br /> Starts Here!</h1>
+      <p class="tit2">Secure your spot at next year's biggest coding conference.</p>
+      <form class="form">
+        <label class="upload-box">
+          <input type="file" id="photo" hidden />
+          <div class="upload-content" id="upload-content">
+            <img src="./assets/images/icon-upload.svg" alt="upload" />
+            <p>Drag and drop or click to upload</p>
+          </div>
+        </label>
+        <div id="preview-area"></div>
+        <small>Upload your photo (JPG or PNG, max size: 500KB).</small>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Full Name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Email Address" />
+        </div>
+        <div class="form-group">
+          <label for="github">GitHub Username</label>
+          <input type="text" id="github" placeholder="GitHub Username" />
+        </div>
+        <button type="submit">Generate My Ticket</button>
+      </form>
+      <div class="ticket-container invisible">
+        <div class="ticket invisible">
+          <img src="./assets/images/pattern-ticket.svg" alt="ticket background" class="ticket-bg" />
+          <div class="ticket-overlay">
+            <div class="ticket-top">
+              <center><img src="./assets/images/logo-full.svg" class="logo" /></center>
+              <p class="location">Jan 31, 2025 / Austin, TX</p>
+            </div>
+            <div class="ticket-bottom">
+              <img src="" id="user-photo" class="profile" />
+              <div class="user-details">
+                <div class="github-details">
+                  <p class="name"></p><br/>
+                </div>
+                <img src="./assets/images/icon-github.svg" id="github-img">
+                <p class="github"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img class="bottom" src="./assets/images/pattern-squiggly-line-bottom-desktop.svg" />
+      <img class="top" src="./assets/images/pattern-squiggly-line-top.svg" />
+      <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.<br />
+        Coded by Ashini.</p>
+    </center>
+  </div>
+<script src="./index.js"></script>
+</body> 
+</html>

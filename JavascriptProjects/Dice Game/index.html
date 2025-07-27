@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Dice Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    
+h1{
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+  </style>
+</head>
+<body class="bg-gray-800">
+
+    <h1 class="text-cyan-400 text-7xl lg:text-8xl xl:text-9xl mt-10"><center>Roll Rush</center></h1>
+    <div class="flex justify-center mt-5">
+   <button type="button" id="btn" class="px-4 py-2 lg:px-10 py-2 font-serif bg-blue-600 text-white font-semibold rounded-3xl hover:bg-blue-700 transition duration-200">
+  Let's Roll!
+</button>
+</div >
+<div class="mt-10 mb-10 flex flex-wrap justify-center gap-10">
+  <div class="w-[30%] min-w-[150px]"><div class="flex justify-center"><h2 class="font-serif text-pink-400 font-bold">Player-1</h2></div>
+  <div id="dice-a" class="bg-red-900  aspect-square rounded-3xl grid grid-cols-3 grid-rows-3 gap-2 p-3">
+    <div id="a1" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-7 lg:h-7 xl:w-12 xl:h-12
+  rounded-full m-auto "></div>
+   <div id="a2" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-7 lg:h-7 xl:w-12 xl:h-12
+ rounded-full m-auto invisible"></div>
+    <div id="a3" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-7 lg:h-7 xl:w-12 xl:h-12
+ rounded-full m-auto"></div>
+    <div id="a4" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-7 lg:h-7 xl:w-12 xl:h-12
+ rounded-full m-auto"></div>
+   <div id="a5" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-7 lg:h-7 xl:w-12 xl:h-12
+ rounded-full m-auto invisible"></div>
+    <div id="a6" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-7 lg:h-7 xl:w-12 xl:h-12
+ rounded-full m-auto"></div>
+    <div id="a7" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-7 lg:h-7 xl:w-12 xl:h-12
+ rounded-full m-auto"></div>
+   <div id="a8" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-7 lg:h-7 xl:w-12 xl:h-12
+ rounded-full m-auto invisible"></div>
+    <div id="a9" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-7 lg:h-7 xl:w-12 xl:h-12
+ rounded-full m-auto"></div>
+    
+  </div></div>
+  <div class="w-[30%] min-w-[150px]" >
+  <div class="flex justify-center"><h2 class="text-pink-400 font-bold font-serif">Player-2</h2></div>
+
+  <div id="dice-b" class="bg-red-900  aspect-square rounded-3xl grid grid-cols-3 grid-rows-3 gap-2 p-3">
+    
+    <div id="b1" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-12 xl:h-12
+  rounded-full m-auto"></div>
+   <div id="b2" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-12 xl:h-12
+ rounded-full m-auto invisible"></div>
+    <div id="b3" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-12 xl:h-12
+ rounded-full m-auto "></div>
+    <div id="b4" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-12 xl:h-12
+ rounded-full m-auto"></div>
+   <div id="b5" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-12 xl:h-12
+ rounded-full m-auto invisible"></div>
+    <div id="b6" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-12 xl:h-12
+ rounded-full m-auto"></div>
+    <div id="b7" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-12 xl:h-12
+ rounded-full m-auto"></div>
+   <div id="b8" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-12 xl:h-12
+ rounded-full m-auto invisible"></div>
+    <div id="b9" class="bg-amber-100 w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-12 xl:h-12
+ rounded-full m-auto"></div>
+    
+    </div>
+</div>
+
+
+</div>
+<script src="./script.js"></script>
+</body>
+</html>

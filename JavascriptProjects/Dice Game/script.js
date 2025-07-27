@@ -1,0 +1,151 @@
+document.getElementById('btn').addEventListener("click",function(){
+    location.reload();
+});
+var rand1=0;
+var rand2=0;
+rand1=Math.floor(Math.random()*6)+1
+rand2=Math.floor(Math.random()*6)+1
+if(rand1===1||rand1===3||rand1===5)
+{
+    document.getElementById('a5').classList.remove('invisible');
+    if(rand1===1)
+        {
+    document.getElementById('a1').classList.add('invisible');
+    document.getElementById('a2').classList.add('invisible');
+    document.getElementById('a3').classList.add('invisible');
+    document.getElementById('a4').classList.add('invisible');
+    document.getElementById('a6').classList.add('invisible');
+    document.getElementById('a7').classList.add('invisible');
+    document.getElementById('a8').classList.add('invisible');
+    document.getElementById('a9').classList.add('invisible');
+    }
+    else if(rand1===3)
+        {
+        document.getElementById('a1').classList.remove('invisible');
+        document.getElementById('a9').classList.remove('invisible'); 
+        document.getElementById('a2').classList.add('invisible');
+        document.getElementById('a3').classList.add('invisible');
+        document.getElementById('a4').classList.add('invisible');
+        document.getElementById('a6').classList.add('invisible');
+        document.getElementById('a7').classList.add('invisible');
+        document.getElementById('a8').classList.add('invisible');
+    }
+    else{
+        document.getElementById('a1').classList.remove('invisible');
+        document.getElementById('a3').classList.remove('invisible');
+        document.getElementById('a7').classList.remove('invisible');
+        document.getElementById('a9').classList.remove('invisible');
+        document.getElementById('a2').classList.add('invisible');
+        document.getElementById('a4').classList.add('invisible');
+        document.getElementById('a6').classList.add('invisible');
+        document.getElementById('a8').classList.add('invisible');
+    }
+}
+if(rand1===2||rand1===4||rand1===6){
+    document.getElementById('a1').classList.remove('invisible');
+    document.getElementById('a9').classList.remove('invisible');
+    if(rand1===2){
+        document.getElementById('a2').classList.add('invisible');
+        document.getElementById('a3').classList.add('invisible');
+        document.getElementById('a4').classList.add('invisible');
+        document.getElementById('a5').classList.add('invisible');
+        document.getElementById('a6').classList.add('invisible');
+        document.getElementById('a7').classList.add('invisible');
+        document.getElementById('a8').classList.add('invisible');
+    }
+    else if(rand1===4){
+        document.getElementById('a3').classList.remove('invisible');
+        document.getElementById('a7').classList.remove('invisible');
+        document.getElementById('a2').classList.add('invisible');
+        document.getElementById('a4').classList.add('invisible');
+        document.getElementById('a5').classList.add('invisible');
+        document.getElementById('a6').classList.add('invisible');
+        document.getElementById('a8').classList.add('invisible');
+    }
+    else{
+        document.getElementById('a3').classList.remove('invisible');
+        document.getElementById('a7').classList.remove('invisible');
+        document.getElementById('a4').classList.remove('invisible');
+        document.getElementById('a6').classList.remove('invisible');
+        document.getElementById('a8').classList.add('invisible');
+        document.getElementById('a2').classList.add('invisible');
+        document.getElementById('a5').classList.add('invisible');
+    }
+}
+if(rand2===1||rand2===3||rand2===5)
+{
+    document.getElementById('b5').classList.remove('invisible');
+    if(rand2===1)
+        {
+    document.getElementById('b1').classList.add('invisible');
+    document.getElementById('b2').classList.add('invisible');
+    document.getElementById('b3').classList.add('invisible');
+    document.getElementById('b4').classList.add('invisible');
+    document.getElementById('b6').classList.add('invisible');
+    document.getElementById('b7').classList.add('invisible');
+    document.getElementById('b8').classList.add('invisible');
+    document.getElementById('b9').classList.add('invisible');
+    }
+    else if(rand2===3)
+        {
+        document.getElementById('b1').classList.remove('invisible');
+        document.getElementById('b9').classList.remove('invisible'); 
+        document.getElementById('b2').classList.add('invisible');
+        document.getElementById('b3').classList.add('invisible');
+        document.getElementById('b4').classList.add('invisible');
+        document.getElementById('b6').classList.add('invisible');
+        document.getElementById('b7').classList.add('invisible');
+        document.getElementById('b8').classList.add('invisible');
+    }
+    else{
+        document.getElementById('b1').classList.remove('invisible');
+        document.getElementById('b3').classList.remove('invisible');
+        document.getElementById('b7').classList.remove('invisible');
+        document.getElementById('b9').classList.remove('invisible');
+        document.getElementById('b2').classList.add('invisible');
+        document.getElementById('b4').classList.add('invisible');
+        document.getElementById('b6').classList.add('invisible');
+        document.getElementById('b8').classList.add('invisible');
+    }
+}
+if(rand2===2||rand2===4||rand2===6){
+    document.getElementById('b1').classList.remove('invisible');
+    document.getElementById('b9').classList.remove('invisible');
+    if(rand2===2){
+        document.getElementById('b2').classList.add('invisible');
+        document.getElementById('b3').classList.add('invisible');
+        document.getElementById('b4').classList.add('invisible');
+        document.getElementById('b5').classList.add('invisible');
+        document.getElementById('b6').classList.add('invisible');
+        document.getElementById('b7').classList.add('invisible');
+        document.getElementById('b8').classList.add('invisible');
+    }
+    else if(rand2===4){
+        document.getElementById('b3').classList.remove('invisible');
+        document.getElementById('b7').classList.remove('invisible');
+        document.getElementById('b2').classList.add('invisible');
+        document.getElementById('b4').classList.add('invisible');
+        document.getElementById('b5').classList.add('invisible');
+        document.getElementById('b6').classList.add('invisible');
+        document.getElementById('b8').classList.add('invisible');
+    }
+    else{
+        document.getElementById('b3').classList.remove('invisible');
+        document.getElementById('b7').classList.remove('invisible');
+        document.getElementById('b4').classList.remove('invisible');
+        document.getElementById('b6').classList.remove('invisible');
+        document.getElementById('b8').classList.add('invisible');
+        document.getElementById('b2').classList.add('invisible');
+        document.getElementById('b5').classList.add('invisible');
+    }
+}
+if(rand1===rand2)
+{
+    document.querySelector('h1').innerHTML="Draw";
+}
+else if(rand1>rand2){
+    document.querySelector('h1').innerHTML=" 🚩Player-1 Wins";
+}
+else{
+    document.querySelector('h1').innerHTML=" 🚩Player-2 Wins";   
+}

@@ -1,0 +1,411 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Inconsolata", monospace;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background-image: 
+    url('./assets/images/pattern-lines.svg'),
+    url('./assets/images/background-desktop.png');
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-position: center, center;
+  background-attachment: scroll, fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px 20px 40px;
+}
+
+.invisible {
+  display: none;
+}
+
+.logo {
+  padding: 30px;
+}
+
+.bottom, .top {
+  position: fixed;
+  z-index: 10;
+}
+
+.bottom {
+  bottom: 0;
+  left: 0;
+  width: 45%;
+}
+
+.top {
+  top: 0;
+  right: 0;
+  width: 30%;
+}
+
+h1 {
+  color: aliceblue;
+  font-weight: 900;
+  font-size: 50px;
+}
+
+p {
+  color: aliceblue;
+  font-size: larger;
+}
+
+.form {
+  width: 100%;
+  max-width: 450px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #1f1f1f;
+  color: white;
+  font-size: 1rem;
+}
+
+.upload-box {
+  display: block;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px dashed #aaa;
+  padding: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: 0.3s ease;
+}
+
+.upload-box:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.upload-content img {
+  width: 40px;
+  opacity: 0.7;
+}
+
+small {
+  display: block;
+  color: #ccc;
+  margin-bottom: 20px;
+  font-size: 12px;
+  text-align: left;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  background: #1e1e2f;
+  color: white;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  background-color: #ff6b5e;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #e24d40;
+}
+
+.ticket-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  position: relative;
+  height: fit-content;
+  padding: 0 10px;
+}
+
+.ticket {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: fit-content;
+}
+
+.ticket-bg {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.ticket-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ticket-overlay .logo {
+  margin-left: auto;
+  margin-right: auto;
+  width: 190px;
+  margin-bottom: 0px;
+}
+
+.location {
+  font-size: 14px;
+  color: #ccc;
+  padding-left: 10px;
+}
+
+.ticket-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ticket-bottom {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+
+.profile {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-details .name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.user-details .github {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.user-details {
+  margin-top: 0;
+  padding-top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: fit-content;
+}
+
+.github-details {
+  margin-top: 0;
+  padding-top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+#github-img {
+  margin-left: 30px;
+  margin-top: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.github {
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+  display: block;
+}
+
+.preview-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 140px;
+}
+
+.preview-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.change-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 0.75rem;
+  cursor: pointer;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.remove-btn {
+  margin-top: 8px;
+  display: inline-block;
+  background: #ff6b5e;
+  color: white;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.3s;
+}
+
+.remove-btn:hover {
+  background: #e24d40;
+}
+
+/* ====================== RESPONSIVE BREAKPOINTS ====================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .form {
+    max-width: 100%;
+  }
+
+  .form-group label,
+  .form-group input {
+    font-size: 0.9rem;
+  }
+
+  .ticket-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .user-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .profile {
+    width: 50px;
+    height: 50px;
+  }
+
+  .ticket-overlay .logo {
+    width: 140px;
+  }
+
+  #github-img {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .github {
+    margin-top: 10px;
+  }
+
+  .bottom {
+    width: 60%;
+  }
+
+  .top {
+    width: 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .upload-box {
+    padding: 20px;
+  }
+
+  .preview-container {
+    max-width: 90px;
+  }
+
+  .change-image {
+    font-size: 0.6rem;
+    padding: 3px 0;
+  }
+
+  .remove-btn {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .form-group input {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .user-details .name {
+    font-size: 16px;
+  }
+
+  .user-details .github {
+    font-size: 12px;
+  }
+}

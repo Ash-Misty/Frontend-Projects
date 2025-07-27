@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard | Eco Link</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+      background-size: cover;
+      animation: colorCycle 25s infinite alternate;
+      align-content: center;
+    }
+
+
+.container {
+  justify-content: center; 
+  align-items: center; 
+  gap: 20px; 
+}
+
+    
+
+    @keyframes colorCycle {
+      0% { filter: hue-rotate(0deg); }
+      50% { filter: hue-rotate(60deg); }
+      100% { filter: hue-rotate(120deg); }
+    }
+
+    footer {
+      background-color: rgba(46, 125, 50, 0.8);
+      color: white;
+      padding: 1.5em;
+      text-align: center;
+      
+    }
+
+    main {
+      padding: 2em;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2em;
+      max-width: 1200px;
+      margin: 2em auto;
+    }
+
+    .tile {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      padding: 1.5em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      width: 25%;
+      display:inline-block;
+    }
+
+    .tile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .tile h2 {
+      color: #1b5e20;
+      margin-bottom: 0.5em;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      padding: 0.5em 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .role-heading {
+      grid-column: 1 / -1;
+      font-size: 1.5em;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px #333;
+      margin: 1em 0 0.5em;
+    }
+
+    .tile img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1em;
+    }
+
+    .tile a {
+      color: #388e3c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .tile a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="role-heading">For Home Seekers</div>
+
+    <div class="tile">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=60" alt="Saved Listings">
+      <h2>Saved Listings</h2>
+      <ul>
+        <li>Green Villa - Chennai</li>
+        <li>Solar Nest - Coimbatore</li>
+      </ul>
+    </div>
+
+    <div class="tile">
+      <img src="./ecopre.jpg" alt="Eco Preferences" >
+      <h2>Eco Preferences</h2>
+      <ul>
+        <li>Goal: Low Carbon Emission Homes</li>
+        <li>Water-saving Features Preferred</li>
+      </ul>
+    </div>
+
+    <div class="tile">
+      <img src="./hou.jpg" alt="Recommended Homes">
+      <h2>Recommended Homes</h2>
+      <ul>
+        <li>Eco Habitat - Madurai</li>
+        <li>Green Grove - Salem</li>
+      </ul>
+    </div>
+
+    <div class="role-heading">For Eco Partners (Developers)</div>
+
+    <div class="tile">
+      <img src="https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=400&q=60" alt="Post New Property">
+      <h2>Post New Property</h2>
+      <ul>
+        <li><a href="#">Post your green-certified property here</a></li>
+      </ul>
+    </div>
+
+    <div class="tile">
+      <img src="./enq.jpg" alt="View Inquiries">
+      <h2>View Inquiries</h2>
+      <ul>
+        <li>10 New Messages</li>
+        <li>5 Property View Requests</li>
+      </ul>
+    </div>
+
+    <div class="tile">
+      <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=400&q=60" alt="Track Engagement">
+      <h2>Track Engagement</h2>
+      <ul>
+        <li>120 Views on Green Villa</li>
+        <li>35 Click-throughs to Website</li>
+      </ul>
+    </div>
+
+    <div class="role-heading">Useful Links</div>
+
+    <div class="tile">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=60" alt="Green Living">
+      <h2><a href="./greenliv.jpg">Green Living</a></h2>
+      <p>Explore tips, tricks, and solutions for sustainable living. Learn how you can reduce your carbon footprint and contribute to a greener world.</p>
+    </div>
+
+    <div class="tile">
+      <img src="./eco.jpg" alt="Eco Housing">
+      <h2><a href="./ecohousing.html">Eco Housing</a></h2>
+      <p>Discover eco-friendly homes and learn how sustainable architecture can help save energy, reduce waste, and conserve resources.</p>
+    </div>
+</main>
+</div>
+  <footer>
+    <p>&copy; 2025 Eco Link. All rights reserved.</p>
+  </footer>
+</body>
+</html>

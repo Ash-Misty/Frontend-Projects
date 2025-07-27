@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoLink - Eco Housing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f1f8f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #4caf50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      background-color: #e8f5e9;
+      padding: 1rem;
+    }
+
+    .filters select,
+    .filters input {
+      margin: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .property-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .property-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .property-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .property-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .property-info {
+      padding: 1rem;
+    }
+
+    .property-info h3 {
+      margin: 0 0 0.5rem;
+    }
+
+    .property-info p {
+      margin: 0.25rem 0;
+      font-size: 0.9rem;
+    }
+
+    .property-info button {
+      margin-top: 1rem;
+      background-color: #4caf50;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .property-info button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Discover Eco-Friendly Homes</h1>
+  </header>
+
+  <div class="filters">
+    <select>
+      <option selected disabled>📍 Location</option>
+      <option>California</option>
+      <option>New York</option>
+      <option>Texas</option>
+    </select>
+
+    <select>
+      <option selected disabled>🏡 Home Type</option>
+      <option>Tiny Home</option>
+      <option>Solar Home</option>
+      <option>Container Home</option>
+    </select>
+
+    <select>
+      <option selected disabled>💰 Budget Range</option>
+      <option>Below $50k</option>
+      <option>$50k - $100k</option>
+      <option>Above $100k</option>
+    </select>
+
+    <select>
+      <option selected disabled>⚡ Energy Rating</option>
+      <option>⭐⭐⭐</option>
+      <option>⭐⭐⭐⭐</option>
+      <option>⭐⭐⭐⭐⭐</option>
+    </select>
+  </div>
+
+  <div class="property-grid">
+    <div class="property-card">
+      <img src="./bamboo.jpg" alt="Tiny Bamboo House">
+      <div class="property-info">
+        <h3>Tiny Bamboo House</h3>
+        <p>Material: Bamboo</p>
+        <p>Energy: Solar</p>
+        <p>Water: Rainwater Harvesting</p>
+        <button>View Details</button>
+      </div>
+    </div>
+
+    <div class="property-card">
+      <img src="./solarhome.jpg" alt="Container Solar Home">
+      <div class="property-info">
+        <h3>Container Solar Home</h3>
+        <p>Material: Recycled Steel</p>
+        <p>Energy: Solar</p>
+        <p>Water: Greywater Recycling</p>
+        <button>View Details</button>
+      </div>
+    </div>
+
+
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=800&q=60" alt="Modern Green Villa">
+      <div class="property-info">
+        <h3>Modern Green Villa</h3>
+        <p>Material: Recycled Bricks</p>
+        <p>Energy: Solar & Wind Hybrid</p>
+        <p>Water: Rainwater System</p>
+        <button>View Details</button>
+      </div>
+    </div>
+
+    <div class="property-card">
+      <img src="./domehouse.jpg" alt="Eco Dome House">
+      <div class="property-info">
+        <h3>Eco Dome House</h3>
+        <p>Material: Earthbags</p>
+        <p>Energy: Solar</p>
+        <p>Water: Greywater System</p>
+        <button>View Details</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
