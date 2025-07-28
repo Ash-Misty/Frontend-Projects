@@ -1,0 +1,23 @@
+
+      body{
+        
+      background-color: black;
+      
+  }
+      img{
+        width: 75%;
+        border: 5px solid white;
+      }
+      h1,p{
+        color: antiquewhite;
+        text-align: center;
+        font-family: "Dancing Script", serif;
+      }
+      .meme{
+        width:50%;
+        margin-top: 10%;
+        
+        font-family: "Raleway", serif;
+    
+      
+      }

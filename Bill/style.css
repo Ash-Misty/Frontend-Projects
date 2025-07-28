@@ -1,0 +1,70 @@
+
+      body {
+        font-family: "Sono", sans-serif;
+      }
+      .pricing-plan{
+        background-color: rgb(219, 192, 160);
+        margin:30px;
+        padding:20px;
+        display:inline-flex;
+        flex-direction: column;
+        text-align: center;
+        flex:1;
+        
+        
+      }
+       
+      .pricing-plan>*{
+        flex-basis: 10px;
+        
+      }
+      .pricing-container{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height:100vh;
+      }
+      .plan-price{
+        font-size: 2rem;
+        font-weight:bold;
+      }
+      .plan-title {
+        font-family: "Raleway", serif;
+        font-weight:1000;
+      }
+     .plan-features{
+      font-family:sono;
+     }
+     ul{
+      list-style: none;
+      
+      
+     }
+     .plan-button{
+      width:max-content;
+      background-color: orangered;
+      border: 3.5px solid rgb(240, 238, 224);
+      color:antiquewhite;
+      padding: 3px;
+     }
+      
+
+      /* Hint: What can you do with a media query and flexbox? */
+      @media (max-width: 1250px) {
+        .pricing-container{
+          display: flex;
+          flex-direction: column;
+          height: 100vh;
+          
+        }
+        .pricing-plan>*{
+          flex-basis: 90px;
+        }
+        .pricing-plan{
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          height:fit-content;
+        }
+      }
+    
