@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoLink - Register</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('./registerbg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .register-container {
+      background-color: #4caf50;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 400px;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input:hover, input:focus, select:hover, select:focus {
+      border-color: #fff;
+      box-shadow: 0 0 5px #fff;
+      outline: none;
+    }
+
+    .role-selection {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .eco-btn {
+      background-color: white;
+      color: #4caf50;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 30px;
+      width: 90%;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+      display: block;
+      text-decoration: none;
+    }
+
+    .eco-btn:hover {
+      background-color: #388e3c;
+      color: white;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #66bb6a;
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .login-link a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .radio-inline {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+
+    .radio-inline input {
+      margin-right: 5px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h2>Register to EcoLink</h2>
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="password">Create Password</label>
+      <input type="password" id="password" name="password" required />
+
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirm-password" required />
+
+      <div class="role-selection">
+        <label>Select Role:</label>
+        <label class="radio-inline">
+          <input type="radio" id="seeker" name="role" value="Home Seeker" required />
+          🏠 Home Seeker
+        </label>
+        <label class="radio-inline">
+          <input type="radio" id="partner" name="role" value="Eco Partner" />
+          🌿 Eco Partner
+        </label>
+      </div>
+
+      <a href="./greenliving.html" class="eco-btn">Register</a>
+    </form>
+    <div class="login-link">
+      Already have an account? <a href="login.html">Login here</a>
+    </div>
+  </div>
+</body>
+</html>

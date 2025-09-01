@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Form - Task 4</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: url("./bg.jpg") no-repeat center center/cover;
+        position: relative;
+        transition: opacity 0.6s;
+      }
+      body::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 0;
+      }
+      .container {
+        position: relative;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        border-radius: 15px;
+        padding: 25px;
+        width: 380px;
+        color: #fff;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        animation: fadeIn 1.2s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 600;
+        font-size: 24px;
+      }
+      nav {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+      }
+      nav a {
+        margin: 0 10px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+      }
+      nav a::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background: #fff;
+        bottom: -3px;
+        left: 0;
+        transition: 0.3s;
+      }
+      nav a:hover::after {
+        width: 100%;
+      }
+      label {
+        font-weight: 500;
+        display: block;
+        margin-top: 10px;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        border: none;
+        border-radius: 8px;
+        outline: none;
+        background: rgba(255, 255, 255, 0.8);
+        color: #333;
+        font-size: 14px;
+        transition: 0.3s;
+      }
+      input:focus {
+        border: 2px solid #667eea;
+      }
+      .error {
+        color: #ff4d4d;
+        font-size: 14px;
+        margin-top: 4px;
+        min-height: 18px;
+      }
+      .valid {
+        border: 2px solid #28a745 !important;
+      }
+      .invalid {
+        border: 2px solid #ff4d4d !important;
+      }
+      .strength {
+        font-size: 14px;
+        margin-top: 5px;
+        font-weight: 600;
+      }
+      .strength.weak {
+        color: red;
+      }
+      .strength.medium {
+        color: orange;
+      }
+      .strength.strong {
+        color: #28a745;
+      }
+      .toggle-btn {
+        position: absolute;
+        right: 15px;
+        top: 38px;
+        cursor: pointer;
+        font-size: 14px;
+        color: #555;
+      }
+      .relative {
+        position: relative;
+      }
+      button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 20px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+      button:hover {
+        background: linear-gradient(135deg, #5563c1, #5b3b91);
+        transform: scale(1.05);
+      }
+      .page {
+        display: none;
+      }
+      .active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#register">Register</a>
+        <a href="#success">Success</a>
+      </nav>
+
+      <!-- Home Page -->
+      <div id="home" class="page active">
+        <h2>Welcome</h2>
+        <p style="text-align: center">
+          Navigate using the menu to fill the student form.
+        </p>
+      </div>
+
+      <!-- Register Page -->
+      <div id="register" class="page">
+        <h2>Student Form</h2>
+        <form id="studentForm">
+          <label>Name:</label>
+          <input type="text" id="name" />
+          <div id="nameError" class="error"></div>
+
+          <label>Email:</label>
+          <input type="text" id="email" />
+          <div id="emailError" class="error"></div>
+
+          <label>Age:</label>
+          <input type="number" id="age" />
+          <div id="ageError" class="error"></div>
+
+          <label>Date of Birth:</label>
+          <input type="date" id="dob" />
+          <div id="dobError" class="error"></div>
+
+          <label>Password:</label>
+          <div class="relative">
+            <input type="password" id="password" />
+            <span class="toggle-btn" onclick="togglePassword()">👁️</span>
+          </div>
+          <div id="passwordError" class="error"></div>
+          <div id="strengthIndicator" class="strength"></div>
+
+          <label>Confirm Password:</label>
+          <input type="password" id="confirmPassword" />
+          <div id="confirmError" class="error"></div>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <!-- Success Page -->
+      <div id="success" class="page">
+        <h2>✅ Form Submitted Successfully!</h2>
+        <p>Thank you for providing your details.</p>
+      </div>
+    </div>
+
+    <script>
+      // ROUTER
+      function router() {
+        const hash = window.location.hash || "#home";
+        document
+          .querySelectorAll(".page")
+          .forEach((page) => page.classList.remove("active"));
+        const activePage = document.querySelector(hash);
+        if (activePage) activePage.classList.add("active");
+      }
+      window.addEventListener("hashchange", router);
+      window.addEventListener("load", router);
+
+      // FORM VALIDATION
+      const form = document.getElementById("studentForm");
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const ageInput = document.getElementById("age");
+      const dobInput = document.getElementById("dob");
+      const passwordInput = document.getElementById("password");
+      const confirmInput = document.getElementById("confirmPassword");
+
+      const nameError = document.getElementById("nameError");
+      const emailError = document.getElementById("emailError");
+      const ageError = document.getElementById("ageError");
+      const dobError = document.getElementById("dobError");
+      const passwordError = document.getElementById("passwordError");
+      const confirmError = document.getElementById("confirmError");
+      const strengthIndicator = document.getElementById("strengthIndicator");
+
+      nameInput.addEventListener("input", validateName);
+      emailInput.addEventListener("input", validateEmail);
+      ageInput.addEventListener("input", validateAge);
+      dobInput.addEventListener("change", validateDOB);
+      passwordInput.addEventListener("input", validatePassword);
+      confirmInput.addEventListener("input", validateConfirm);
+
+      function validateName() {
+        const namePattern = /^[A-Za-z ]+$/;
+        if (nameInput.value.trim() === "")
+          setError(nameInput, nameError, "Name is required.");
+        else if (!namePattern.test(nameInput.value.trim()))
+          setError(nameInput, nameError, "Only alphabets and spaces allowed.");
+        else setSuccess(nameInput, nameError);
+      }
+
+      function validateEmail() {
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
+        if (!emailPattern.test(emailInput.value.trim()))
+          setError(emailInput, emailError, "Enter a valid email.");
+        else setSuccess(emailInput, emailError);
+      }
+
+      function validateAge() {
+        if (ageInput.value === "" || Number(ageInput.value) < 18)
+          setError(ageInput, ageError, "Age must be 18 or above.");
+        else setSuccess(ageInput, ageError);
+      }
+
+      function validateDOB() {
+        const dobVal = dobInput.value;
+        if (!dobVal) {
+          setError(dobInput, dobError, "Date of Birth is required.");
+          return;
+        }
+        const year = parseInt(dobVal.split("-")[0], 10);
+        if (year <= 2006)
+          setError(dobInput, dobError, "Year must be 2007 or later.");
+        else setSuccess(dobInput, dobError);
+      }
+
+      function validatePassword() {
+        const val = passwordInput.value;
+        const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+        if (!pattern.test(val)) {
+          setError(
+            passwordInput,
+            passwordError,
+            "Password must be 8+ chars, include uppercase, lowercase, number, special char."
+          );
+        } else {
+          setSuccess(passwordInput, passwordError);
+        }
+        updateStrength(val);
+      }
+
+      function updateStrength(val) {
+        if (val.length === 0) strengthIndicator.textContent = "";
+        else if (val.length < 6) {
+          strengthIndicator.textContent = "Weak";
+          strengthIndicator.className = "strength weak";
+        } else if (val.length < 10) {
+          strengthIndicator.textContent = "Medium";
+          strengthIndicator.className = "strength medium";
+        } else {
+          strengthIndicator.textContent = "Strong";
+          strengthIndicator.className = "strength strong";
+        }
+      }
+
+      function validateConfirm() {
+        if (confirmInput.value !== passwordInput.value)
+          setError(confirmInput, confirmError, "Passwords do not match.");
+        else setSuccess(confirmInput, confirmError);
+      }
+
+      function setError(input, errorElement, message) {
+        input.classList.add("invalid");
+        input.classList.remove("valid");
+        errorElement.textContent = message;
+      }
+
+      function setSuccess(input, errorElement) {
+        input.classList.remove("invalid");
+        input.classList.add("valid");
+        errorElement.textContent = "";
+      }
+
+      function togglePassword() {
+        const type = passwordInput.type === "password" ? "text" : "password";
+        passwordInput.type = type;
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        validateName();
+        validateEmail();
+        validateAge();
+        validateDOB();
+        validatePassword();
+        validateConfirm();
+        if (document.querySelectorAll(".invalid").length === 0) {
+          window.location.hash = "#success";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="./loginlogo.jpg" type="image/jpg">
+  <title>EcoLink - Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('./loginbg.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .login-card {
+      background-color: rgba(76, 175, 80, 0.95); /* Green with slight transparency */
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(76, 175, 80, 0.6);
+      width: 350px;
+      animation: slideUp 1s ease;
+      color: white;
+    }
+
+    .login-card h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .login-card input[type="text"],
+    .login-card input[type="password"] {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .login-card input[type="text"]:hover,
+    .login-card input[type="password"]:hover {
+      background-color: #e8f5e9;
+    }
+
+    .login-card input:focus {
+      outline: none;
+      box-shadow: 0 0 5px #fff;
+    }
+
+    .login-card .forgot-password {
+      display: block;
+      text-align: right;
+      font-size: 0.9rem;
+      color: #e8f5e9;
+      text-decoration: none;
+      margin-bottom: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .login-card .forgot-password:hover {
+      color: #c8e6c9;
+      text-decoration: underline;
+    }
+
+    .login-card button {
+      width: 100%;
+      background-color: #ffffff;
+      color: #2e7d32;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-card button:hover {
+      background-color: #f1f8e9;
+    }
+
+    .register-link {
+      display: block;
+      text-align: center;
+      margin-top: 1.2rem;
+      font-size: 0.95rem;
+    }
+
+    .register-link a {
+      color: #ffffff;
+      text-decoration: underline;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .register-link a:hover {
+      color: #c8e6c9;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      0% {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-card">
+    <h2>EcoLink Login</h2>
+    <form>
+      <input type="text" placeholder="Email or Username" required />
+      <input type="password" placeholder="Password" required />
+      <a href="#" class="forgot-password">Forgot Password?</a>
+      <button type="submit">Login</button>
+      <div class="register-link">
+        Don’t have an account?
+        <a href="register.html">Register here</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

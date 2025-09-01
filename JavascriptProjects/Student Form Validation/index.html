@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Details Form</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: rgb(172, 28, 225);
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    "
+  >
+    <div style="width: 100%; max-width: 1000px; text-align: center">
+      <h1
+        style="
+          color: white;
+          font-size: clamp(24px, 5vw, 40px);
+          font-weight: 600;
+          text-align: center;
+          margin-bottom: 20px;
+        "
+      >
+        Student Details Form
+      </h1>
+
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+          border: 0.5px solid purple;
+          border-radius: 20px;
+          background-color: rgb(197, 97, 197);
+          flex-wrap: wrap;
+          max-width: 900px;
+          width: 90%;
+          margin: 0 auto;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        "
+      >
+        <div style="flex: 1 1 300px; text-align: center; margin-bottom: 15px">
+          <img
+            src="./bg.avif"
+            alt="image of an exam"
+            style="width: 100%; height: auto; border-radius: 10px"
+          />
+        </div>
+
+        <div
+          style="
+            flex: 1 1 300px;
+            background-color: rgb(169, 42, 201);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          "
+        >
+          <form
+            method="POST"
+            action="server.php"
+            onsubmit="return validateForm()"
+            style="display: flex; flex-direction: column; gap: 10px"
+          >
+            <label for="name" style="color: #fff; font-weight: bold">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+              style="
+                padding: 10px;
+                border: 2px solid #0b090b;
+                border-radius: 10px;
+                font-size: 16px;
+                outline: none;
+                transition: 0.3s;
+              "
+              onfocus="this.style.backgroundColor='rgb(221,64,179)'"
+              onblur="this.style.backgroundColor='white'"
+            />
+            <p id="nameError" style="color: yellow; font-size: 14px; margin: 0"></p>
+
+            <label for="email" style="color: #fff; font-weight: bold">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+              style="
+                padding: 10px;
+                border: 2px solid #0b090b;
+                border-radius: 10px;
+                font-size: 16px;
+                outline: none;
+                transition: 0.3s;
+              "
+              onfocus="this.style.backgroundColor='rgb(221,64,179)'"
+              onblur="this.style.backgroundColor='white'"
+            />
+            <p id="emailError" style="color: yellow; font-size: 14px; margin: 0"></p>
+
+            <label for="dob" style="color: #fff; font-weight: bold">Date Of Birth:</label>
+            <input
+              type="date"
+              id="dob"
+              name="dob"
+              required
+              style="
+                padding: 10px;
+                border: 2px solid #0b090b;
+                border-radius: 10px;
+                font-size: 16px;
+                outline: none;
+                transition: 0.3s;
+              "
+              onfocus="this.style.backgroundColor='rgb(221,64,179)'"
+              onblur="this.style.backgroundColor='white'"
+            />
+            <p id="dobError" style="color: yellow; font-size: 14px; margin: 0"></p>
+
+            <button
+              type="submit"
+              style="
+                margin-top: 15px;
+                padding: 12px;
+                background-color: #fff;
+                color: rgb(169, 42, 201);
+                border: none;
+                border-radius: 10px;
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: 0.3s;
+              "
+              onmouseover="this.style.backgroundColor='rgb(221,64,179)';this.style.color='white';"
+              onmouseout="this.style.backgroundColor='#fff';this.style.color='rgb(169,42,201)';"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Limit DOB picker to 18+ (prevents choosing too-recent dates)
+      window.addEventListener("DOMContentLoaded", function () {
+        const dobInput = document.getElementById("dob");
+        const today = new Date();
+        const maxDate = new Date(
+          today.getFullYear() - 18,
+          today.getMonth(),
+          today.getDate()
+        );
+        const yyyy = maxDate.getFullYear();
+        const mm = String(maxDate.getMonth() + 1).padStart(2, "0");
+        const dd = String(maxDate.getDate()).padStart(2, "0");
+        dobInput.max = `${yyyy}-${mm}-${dd}`;
+        dobInput.min = "1900-01-01";
+      });
+
+      // Parse 'YYYY-MM-DD' safely (avoids timezone issues)
+      function parseISODate(iso) {
+        const parts = iso.split("-");
+        if (parts.length !== 3) return null;
+        const y = Number(parts[0]);
+        const m = Number(parts[1]);
+        const d = Number(parts[2]);
+        if (!y || !m || !d) return null;
+        return new Date(y, m - 1, d); // local date
+      }
+
+      function calculateAgeFromISO(iso) {
+        const birthDate = parseISODate(iso);
+        if (!birthDate) return NaN;
+        const today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDiff = today.getMonth() - birthDate.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+          age--;
+        }
+        return age;
+      }
+
+      function validateForm() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const dob = document.getElementById("dob").value.trim();
+
+        // Clear previous errors
+        document.getElementById("nameError").innerText = "";
+        document.getElementById("emailError").innerText = "";
+        document.getElementById("dobError").innerText = "";
+
+        let valid = true;
+
+        // Name (letters + spaces, at least 3 letters total)
+        if (!/^(?=.*[A-Za-z]{3,})[A-Za-z\s]+$/.test(name)) {
+          document.getElementById("nameError").innerText =
+            "Name must have at least 3 letters and can include spaces (no numbers or special characters).";
+          valid = false;
+        }
+
+        // Email
+        if (
+          !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)
+        ) {
+          document.getElementById("emailError").innerText =
+            "Enter a valid email address.";
+          valid = false;
+        }
+
+        // DOB (required and 18+)
+        if (!dob) {
+          document.getElementById("dobError").innerText =
+            "Please select your date of birth.";
+          valid = false;
+        } else {
+          const age = calculateAgeFromISO(dob);
+          if (Number.isNaN(age)) {
+            document.getElementById("dobError").innerText = "Invalid date.";
+            valid = false;
+          } else if (age < 18) {
+            document.getElementById("dobError").innerText =
+              "You must be at least 18 years old.";
+            valid = false;
+          }
+        }
+
+        return valid;
+      }
+    </script>
+  </body>
+</html>

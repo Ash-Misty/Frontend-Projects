@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Living | Eco Link</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('./greenliv.jpg') no-repeat center center fixed, linear-gradient(to bottom right, #e8f5e9, #f1f8e9);
+      background-size: cover;
+      color: #1c9d1c;
+      
+      animation: colorShift 20s infinite alternate;
+    }
+    header, footer {
+      background-color: #518053;
+      color: white;
+      padding: 1.5em;
+      text-align: center;
+    }
+    main {
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    section {
+      margin-bottom: 2.5em;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1.5em;
+      width: fit-content;
+      max-width: 90%;
+    }
+    h2 {
+      color: #350a4f;
+      font-weight: bold;
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 1.5em;
+    }
+    .challenge-signup, .forum-link {
+      background: #dcedc8;
+      background: url('./registerbg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      padding: 1.5em;
+      border-radius: 10px;
+      margin-top: 1em;
+      text-align: center;
+      color: black;
+      font-weight: 500 ;
+      width: fit-content;
+    }
+    a.button {
+      display: inline-block;
+      background: #66bb6a;
+      color: white;
+      padding: 0.6em 1.2em;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 1em;
+      transition: background 0.3s ease;
+    }
+    a.button:hover {
+      background: #43a047;
+    }
+    .topic-img {
+      width: 100px;
+      height: 100px;
+      float: right;
+      margin-left: 15px;
+    }
+ 
+@keyframes colorShift {
+  0%   { background-color: #e8f5e9; }
+  25%  { background-color: #d0f0c0; }
+  50%  { background-color: #c8e6c9; }
+  75%  { background-color: #f1f8e9; }
+  100% { background-color: #e8f5e9; }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Green Living</h1>
+    <p>Live Sustainably with Eco Link</p>
+  </header>
+  <main>
+    <section>
+      <h2><img src="./sus.jpg" class="topic-img" alt="Tips Icon">Tips for Sustainable Living</h2>
+      <ul>
+        <li>Use reusable bags, bottles, and containers.</li>
+        <li>Choose public transport, bike, or walk when possible.</li>
+        <li>Support local and organic food producers.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><img src="./energy.jpg" class="topic-img" alt="Energy Icon">DIY Home Energy Saving Ideas</h2>
+      <ul>
+        <li>Install LED bulbs to reduce energy use.</li>
+        <li>Seal windows and doors to avoid heat loss.</li>
+        <li>Use a smart thermostat to control energy efficiently.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><img src="./recy.jpg" class="topic-img" alt="Waste Icon">Waste Reduction Practices</h2>
+      <ul>
+        <li>Compost food waste and garden scraps.</li>
+        <li>Recycle paper, plastic, metal, and glass responsibly.</li>
+        <li>Donate or repurpose old clothes and furniture.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><img src="./pro.jpg" class="topic-img" alt="Products Icon">Eco Product Recommendations</h2>
+      <ul>
+        <li>Bamboo toothbrushes</li>
+        <li>Biodegradable cleaning products</li>
+        <li>Solar-powered chargers</li>
+      </ul>
+    </section>
+
+    <section class="challenge-signup">
+      <h2>Join the Weekly Eco Challenge!</h2>
+      <p>Get weekly tips and tasks to help you live greener.</p>
+      <a href="#" class="button">Sign Up Now</a>
+    </section>
+
+    <section class="forum-link">
+      <h2>Community Forum</h2>
+      <p>Share your green hacks and learn from others.</p>
+      <a href="#" class="button">Join the Forum</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Eco Link. All rights reserved.</p>
+  </footer>
+</body>
+</html>

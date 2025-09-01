@@ -1,0 +1,85 @@
+.container{
+    padding: 10px;
+    background-color: black;
+    height:800px;
+    width:660px;
+    display:grid;
+    grid-template-columns: 100px 80px 60px 110px 80px 90px 60px 40px;
+    grid-template-rows: 50px 80px 50px 70px 150px 140px 10px 40px 120px 40px ;
+    gap: 5px;
+}
+.a{
+    background-color: yellow;
+    grid-column: span 2;
+    grid-row: span 2;
+}
+.b {
+    background-color: red;
+    grid-column: span 6;
+}
+.c{
+    background-color: blue;
+    grid-row:span 5;
+}
+.d{
+    background-color: yellow;
+    grid-row:span 3;
+}
+.e{
+    background-color: aliceblue;
+    grid-column: span 2;
+    grid-row: span 2;
+}
+.f{
+    background-color: yellow;
+    grid-row:span 6;
+}
+.g{
+    background-color: blue;
+    grid-row:span 9;
+}
+.h{
+    background-color: red;
+    grid-row: span 3;
+}
+.i{
+    grid-row:span 4;
+    background-color: antiquewhite;
+}
+.j{
+    grid-row:span 5;
+    background-color: red;
+}
+
+
+.k{
+    grid-row:span 4;
+    background-color:blue;
+}
+.l{
+    
+    grid-row: span 4;
+    background-color: antiquewhite;
+}
+.m{
+    background-color: blue;
+    grid-row: span 4;
+}
+.n{
+    background-color: red;
+    grid-column: span 2;
+    grid-row:span 3;
+}
+.o{
+    background-color:aliceblue ;
+    grid-column: span 2;
+    grid-row:span 2;
+}
+.p{
+    background-color: blue;
+    grid-column:span 2;
+}
+.q{
+    background-color: yellow;
+    grid-column: span 7;
+}
