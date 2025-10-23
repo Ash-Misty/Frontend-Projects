@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Check Balance</title>
+  <script src="script.js" ></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('images/bg.jpg') no-repeat center center/cover;
+      color: #fff;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 16px;
+      padding: 30px 35px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      width: 420px;
+      max-width: 90%;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 15px;
+      color: #ffd700;
+      font-size: 2rem;
+    }
+
+    .info-box {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .income { color: #4CAF50; }   
+    .expense { color: #FF5722; }  
+    .balance { color: #2196F3; }  
+
+    h2 {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      color: #ff4da6;
+    }
+
+   
+    #expenseList {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .expense-card {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 12px;
+      border-radius: 8px;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1rem;
+    }
+
+    .expense-card span {
+      font-weight: bold;
+      color: #ffd700;
+    }
+
+    
+    .home-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #ffd700;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .home-btn:hover {
+      background-color: #e6c200;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1> Balance</h1>
+
+    <div class="info-box income" id="incomeBox">Income: ₹0</div>
+    <div class="info-box expense" id="expenseBox">Expenses: ₹0</div>
+    <div class="info-box balance" id="balanceBox">Balance: ₹0</div>
+
+    <h2> Expenses</h2>
+    <div id="expenseList"></div>
+
+ 
+    <button class="home-btn" onclick="window.location.href='index.html'"> Back to Home</button>
+  </div>
+</body>
+</html>

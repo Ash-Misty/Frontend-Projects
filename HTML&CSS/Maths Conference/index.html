@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NCBSMM-25 Conference</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f4f6f9;
+        color: #333;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+      }
+
+      /* Hero Header */
+      header {
+        background: linear-gradient(135deg, #0059b3, #ff6614);
+        color: white;
+        padding: 30px 20px 60px;
+        text-align: center;
+        position: relative;
+      }
+      header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+      header p {
+        font-size: 1.1em;
+      }
+
+      header .logo-left,
+      header .logo-right {
+        position: absolute;
+        top: 15px;
+        width: 140px;
+        height: auto;
+      }
+      header .logo-left {
+        left: 20px;
+      }
+      header .logo-right {
+        right: 20px;
+      }
+
+      /* Responsive logo stacking */
+      @media (max-width: 768px) {
+        header {
+          padding-top: 20px;
+        }
+        header .logo-left,
+        header .logo-right {
+          position: static;
+          display: inline-block;
+          width: 90px;
+          margin: 5px;
+        }
+        .logo {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+        }
+        header h1 {
+          font-size: 1.3em; 
+        }
+      }
+
+      /* Sections */
+      section {
+        padding: 40px 20px;
+        background: white;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #003366;
+        margin-bottom: 15px;
+        border-left: 5px solid #ffcc00;
+        padding-left: 10px;
+      }
+      ul {
+        list-style: square;
+        margin-left: 20px;
+      }
+
+      /* Speaker Cards */
+      .speakers {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+      .speaker {
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s;
+      }
+      .speaker:hover {
+        transform: translateY(-5px);
+      }
+      .speaker img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid #003366;
+        object-fit: cover;
+        margin-bottom: 10px;
+      }
+      .speaker h3 {
+        color: #003366;
+        margin-bottom: 5px;
+      }
+
+      /* QR */
+      .qr-code {
+        text-align: center;
+      }
+      .qr-code img {
+        width: 180px;
+        height: 180px;
+        margin: 15px 0;
+        border: 5px solid #003366;
+        border-radius: 10px;
+        transition: transform 0.3s;
+      }
+      .qr-code img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Footer */
+      footer {
+        background: #003366;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./assets/annalogo.png" alt="Left Logo" class="logo-left" />
+        <h1>NCBSMM-25</h1>
+        <img src="./assets/logo1.png" alt="Right Logo" class="logo-right" />
+      </div>
+
+      <p>National Conference on Building Smarter Machines with Math</p>
+      <p>21st November 2025 | UCE-BIT Campus, Anna University, Trichy</p>
+      <p>Venue: Dr. APJ Abdul Kalam Auditorium | 10:00 AM - 5:00 PM</p>
+    </header>
+
+    <section id="university">
+      <h2>About the University</h2>
+      <p>
+        University College of Engineering (UCE), BIT Campus, Anna University,
+        Tiruchirappalli was established in 1999 and functions as a constituent
+        college of Anna University, Chennai. UCE BIT Campus has 7 Faculties, 16
+        Departments, NBA Accreditation, 10 B.E/B.Tech UG programmes, 8
+        M.E/M.Tech PG programmes, MBA, MCA, and Ph.D. programmes with 4628
+        students. It is TEQIP II sponsored with UGC 2f & 12B status. The
+        institute has received ₹300 million in research/consultancy funding. Its
+        objective is to generate highly creative professionals for nation
+        building.
+      </p>
+    </section>
+
+    <section id="department">
+      <h2>About the Department</h2>
+      <p>
+        The Department of Mathematics, established in 1999, supports UG & PG
+        programmes in Engineering & Technology. It provides strong mathematical
+        foundations and computational skills for industrial/research problems.
+        Faculty research includes Optimization, Queuing Theory, Differential
+        Equations, Fuzzy Mathematics, and Graph Theory.
+      </p>
+    </section>
+
+    <section id="aim">
+      <h2>Aim & Objectives</h2>
+      <ul>
+        <li>Explore math concepts and models of machine building</li>
+        <li>
+          Transform abstract ideas into efficient, reliable, intelligent
+          machines
+        </li>
+        <li>
+          Promote applications of geometry, robotics algorithms, algebra in
+          control, probability in decision making
+        </li>
+      </ul>
+    </section>
+
+    <section id="tracks">
+      <h2>Tracks of NCBSMM-25</h2>
+      <ul>
+        <li>Algebra, Numerical Analysis</li>
+        <li>Operations Research, Differential Equations</li>
+        <li>Mathematical Modeling, Stochastic Modeling</li>
+        <li>Discrete Mathematics, Fluid Mechanics</li>
+        <li>Computational Geometry, Number Theory</li>
+        <li>Mathematical Physics, Cryptography</li>
+        <li>Combinatorics, Topology</li>
+        <li>Machine Learning & Data Science</li>
+        <li>Computational Biology & Bioinformatics</li>
+        <li>Image & Signal Processing</li>
+        <li>Computational Chemistry</li>
+        <li>Theory of Automata</li>
+      </ul>
+    </section>
+
+    <section id="keynote">
+      <h2>Keynote Speaker</h2>
+      <div class="speakers">
+        <div class="speaker">
+          <img src="./assets/kimg.jpg" alt="Dr. R. Balakrishnan" />
+          <h3>Dr. R. Balakrishnan</h3>
+          <p>
+            Adjunct Professor, Department of Mathematics,<br />Bharathidasan
+            University, Trichy
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="invited">
+      <h2>Invited Speakers</h2>
+      <div class="speakers">
+        <div class="speaker">
+          <img src="./assets/img1.jpg" />
+          <h3>Dr. Nilam</h3>
+          <p>Department of Applied Mathematics, DTU Delhi</p>
+        </div>
+        <div class="speaker">
+          <img src="./assets/img2.jpg" />
+          <h3>Dr. U. Srinivasulu Reddy</h3>
+          <p>Department of Computer Applications, NIT Trichy</p>
+        </div>
+        <div class="speaker">
+          <img src="./assets/img3.jpg" />
+          <h3>Dr. K. Thiyagu</h3>
+          <p>School of Education & Training, CU Karnataka</p>
+        </div>
+        <div class="speaker">
+          <img src="./assets/img4.jpg" />
+          <h3>Dr. J. Kannan</h3>
+          <p>Department of Mathematics, Ayya Nadar Janaki College, Sivakasi</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="advisory">
+      <h2>Advisory Committee Members</h2>
+      <ul>
+        <li>Dr. S. Dharmaraja, IIT Delhi</li>
+        <li>Dr. S.R. Manam, IIT Madras</li>
+        <li>Dr. K.C. Sivakumar, IIT Madras</li>
+        <li>Dr. M. Mathirajan, IISC Bangalore</li>
+        <li>Dr. T. Sengadir, CUTN</li>
+        <li>Dr. V. Lakshmana Gomathi Nayagam, NIT Trichy</li>
+        <li>Dr. P. Saikrishnan, NIT Trichy</li>
+        <li>Dr. R. Balakrishnan, BDU Trichy</li>
+        <li>Dr. A. Tamilselvan, BDU Trichy</li>
+        <li>Dr. C. Durairajan, BDU Trichy</li>
+      </ul>
+    </section>
+
+    <section id="committee">
+      <h2>Organizing Committee</h2>
+      <ul>
+        <li>
+          <b>Chief Patrons:</b> Dr. P. Shankar (IAS), Tmt. J. Innocent Divya
+          (IAS), Dr. B.T.N. Sridhar
+        </li>
+        <li><b>Patron:</b> Prof. J. Prakash</li>
+        <li><b>Co-Patron:</b> Prof. P. Hariharan</li>
+        <li><b>Convener:</b> Prof. T. Senthilkumar</li>
+        <li><b>Co-Convener:</b> Dr. R. Sudhesh</li>
+        <li>
+          <b>Organizing Secretaries:</b> Dr. S. Therasa, Dr. A. Puvaneswari
+        </li>
+        <li>
+          <b>Joint Secretaries:</b> Dr. S. Mahalakshmi, Dr. R. Sebasthi Priya
+        </li>
+        <li>
+          <b>Committee Members:</b> Dr. C. Sharmila Devi, Dr. B. Palpandi, Dr.
+          P. Mahendran, Dr. S. Menaka, Dr. M. Aruvi, Dr. S. Kalaiselvi, Dr. B.
+          Sumithra, Dr. S. Ramasubramaniyan, Dr. K. Kamaraj
+        </li>
+      </ul>
+    </section>
+
+    <section id="dates">
+      <h2>Important Dates & Fee</h2>
+      <p><b>Registration Fee:</b> ₹500</p>
+      <p><b>Abstract Submission:</b> 05/11/2025</p>
+      <p><b>Full Paper Submission:</b> 10/11/2025</p>
+      <p><b>Registration Deadline:</b> 15/11/2025</p>
+      <p>
+        <b>Publication:</b> Accepted papers will be published in proceedings
+        with ISBN.
+      </p>
+    </section>
+
+    <section id="qr" class="qr-code">
+      <h2>QR Code for Registration</h2>
+      <img src="./assets/qrimg.png" alt="QR Code" />
+      <p>Scan with Google Lens</p>
+      <p>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfwDLeLtdmnyiNifh5M-W2Fk1F0iqVUbswDZ8RrFAGfPDLtGQ/viewform"
+          target="_blank"
+          >Registration Form</a
+        >
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Dr. S. Mahalakshmi - 9442569170</p>
+      <p>Dr. R. Sebasthi Priya - 9500633202</p>
+      <p>Email: <a href="mailto:bsmmn25@gmail.com">bsmmn25@gmail.com</a></p>
+    </section>
+
+    <footer>
+      <p>
+        &copy; 2025 NCBSMM-25 | Department of Mathematics, UCE-BIT Campus, Anna
+        University
+      </p>
+    </footer>
+  </body>
+</html>

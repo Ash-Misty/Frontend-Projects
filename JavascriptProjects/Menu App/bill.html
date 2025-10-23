@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bill</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: url('images/billbg.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+      position: relative;
+    }
+   
+    h2, ul, p, button {
+      position: relative;
+      z-index: 1;
+    }
+    h2 {
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 400px;
+      width: 100%;
+    }
+    li {
+      background: rgba(255,255,255,0.95);
+      padding: 12px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+    }
+    .total {
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 20px;
+      color: #ffffff;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      background: #17a2b8;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #138496;
+    }
+    .container{
+      background-color: rgba(1, 1, 1, 0.627);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: fit-content;
+      width: max-content;
+      padding: 30px;
+      border-radius: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <h2>Your Bill</h2>
+  <ul id="bill-list"></ul>
+  <p class="total" id="total"></p>
+  <button onclick="location.href='index.html'">Back to Home</button>
+  </div>
+
+  <script>
+    const billList = document.getElementById("bill-list");
+    const totalElement = document.getElementById("total");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let total = 0;
+    cart.forEach(item => {
+      let li = document.createElement("li");
+      li.textContent = `${item.name} x ${item.quantity} = ₹${item.price * item.quantity}`;
+      billList.appendChild(li);
+      total += item.price * item.quantity;
+    });
+
+    totalElement.textContent = `Total: ₹${total}`;
+  </script>
+</body>
+</html>

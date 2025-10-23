@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Restaurant App - Menu</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+        background: url("images/menubg.jpg") no-repeat center center/cover;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        position: relative;
+      }
+
+      h2,
+      .menu-item,
+      button {
+        position: relative;
+        z-index: 1;
+      }
+      h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #000000;
+      }
+      .menu-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 400px;
+        width: 100%;
+        margin: 10px auto;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .menu-item input {
+        width: 60px;
+        padding: 6px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+      button {
+        margin-top: 20px;
+        padding: 12px 24px;
+        font-size: 18px;
+        border: none;
+        border-radius: 25px;
+        background: #28a745;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      button:hover {
+        background: #218838;
+        transform: scale(1.05);
+      }
+      .container{
+        background-color: rgba(161, 153, 153, 0.552);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: fit-content;
+        width: 50%;
+      }
+      .but{
+        padding-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Choose Your Meal</h2>
+      <div class="menu-item">
+        <span>Paneer Butter Masala - ₹250</span>
+        <input type="number" min="0" id="paneer" />
+      </div>
+      <div class="menu-item">
+        <span>Veg Biryani - ₹180</span>
+        <input type="number" min="0" id="biryani" />
+      </div>
+      <div class="menu-item">
+        <span>Chicken Curry -₹150</span>
+        <input type="number" min="0" id="chicken" />
+      </div>
+      <div class="menu-item">
+        <span>Mutton Biryani - ₹300 </span>
+        <input type="number" min="0" id="mutton" />
+      </div>
+      <div class="but">
+      <button onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
+
+    <script>
+      function addToCart() {
+        const items = [
+          { id: "paneer", name: "Paneer Butter Masala", price: 250 },
+          { id: "biryani", name: "Veg Biryani", price: 180 },
+          { id: "chicken", name: "Chicken Curry", price: 150 },
+          { id: "mutton", name: "Mutton Biryani", price: 300 },
+        ];
+
+        let cart = [];
+        items.forEach((item) => {
+          const qty = parseInt(document.getElementById(item.id).value) || 0;
+          if (qty > 0) {
+            cart.push({ name: item.name, price: item.price, quantity: qty });
+          }
+        });
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        location.href = "cart.html";
+      }
+    </script>
+  </body>
+</html>

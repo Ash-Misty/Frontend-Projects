@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart</title>
+  <style>
+     body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: url('images/cartbg.webp') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+      position: relative;
+    }
+    
+    h2, ul, button {
+      position: relative;
+      z-index: 1;
+    }
+    h2 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 400px;
+      width: 100%;
+    }
+    li {
+      background: rgba(255,255,255,0.9);
+      padding: 12px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+    }
+    button {
+      margin: 10px;
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      background: #ffc107;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #e0a800;
+    }
+    .container{
+    background-color: rgba(176, 168, 168, 0.536); 
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    padding: 30px;
+    border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <h2>Your Cart</h2>
+  <ul id="cart-list"></ul>
+  <button onclick="location.href='bill.html'">Generate Bill</button>
+  <button onclick="location.href='menu.html'">Reorder</button>
+  </div>
+
+  <script>
+    const cartList = document.getElementById("cart-list");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (cart.length === 0) {
+      cartList.innerHTML = "<li>No items added yet.</li>";
+    } else {
+      cart.forEach(item => {
+        let li = document.createElement("li");
+        li.textContent = `${item.name} x ${item.quantity} = ₹${item.price * item.quantity}`;
+        cartList.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
